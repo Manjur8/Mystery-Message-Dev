@@ -29,6 +29,6 @@ export async function POST(req: Request) {
             success: false,
             message: (error as {message: string})?.message,
             error
-        })
+        }, {status: (error as {status: number})?.status || 500})
   }
 }
